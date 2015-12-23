@@ -25,7 +25,8 @@
 .hex
 .idris
 .lein
-.m2 # another clojure thing ??
+.m2
+#  -- another clojure thing ??
 .mix
 .node-gyp
 .python-eggs
@@ -34,18 +35,23 @@
 .stack
 .subversion
 .vagrant.d
-.rush # will probably want to un-ignore this someday
+.rush
+#   -- will probably want to un-ignore this someday
 
 # pixel piracy
 .config
 
 # app stuff
 .dropbox
-.geeknote # just an error log and db cache
-.tox # another part of geeknote
+.geeknote 
+#  -- just an error log and db cache
+.tox 
+#  -- another part of geeknote
 .heroku
-.local # the long dark
-.uqm # the urquan masters
+.local
+#  -- the long dark
+.uqm
+#  -- the urquan masters
 .uqmhd
 
 # Dirs
