@@ -1,0 +1,92 @@
+# history files
+.bash_history
+.cljsc_history
+.lesshst
+.irb-history
+.sh_history
+.pry_history
+.psql_history
+.node_repl_history
+
+# ??
+.Xauthority
+
+# Caches/languages/tools stuff
+# (that doesn't need VC'd)
+.bundle
+.cabal
+.cache
+.cargo
+.chef
+.elm
+.ghc
+.gem
+.hoe_template
+.hex
+.idris
+.lein
+.m2 # another clojure thing ??
+.mix
+.node-gyp
+.python-eggs
+.npm
+.rvm
+.stack
+.subversion
+.vagrant.d
+.rush # will probably want to un-ignore this someday
+
+# pixel piracy
+.config
+
+# app stuff
+.dropbox
+.geeknote # just an error log and db cache
+.tox # another part of geeknote
+.heroku
+.local # the long dark
+.uqm # the urquan masters
+.uqmhd
+
+# Dirs
+Applications
+Backup
+Books and Papers
+Desktop
+Documents
+Downloads
+Dropbox
+Funny
+Inbox
+Library
+Movies
+Music
+Pictures
+Projects
+Public
+Reference
+Sites
+VirtualBox VMs
+lib
+receipts-etc
+vagrant-environment
+var
+
+# SSHHHHH SECRETS
+.pgpass
+.netrc
+.ttm_scalr_access_info
+.ttm_scalr_aliases.json
+.gnupg
+.papertrail.yml
+.ssh
+
+# garbage
+.oracle_jre_usage
+.viminfo
+.rnd
+
+# os x stuff
+.CFUserTextEncoding
+.DS_Store
+.Trash
