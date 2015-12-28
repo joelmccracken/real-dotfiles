@@ -229,6 +229,7 @@ layers configuration. You are free to put any user code."
   (advice-add 'term-ansi-make-term :around #'jnm/term-ansi-make-term)
 
   (global-set-key (kbd "s-n") 'ansi-term)
+  (setq projectile-switch-project-action 'magit-status)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
