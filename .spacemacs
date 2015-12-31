@@ -230,7 +230,9 @@ layers configuration. You are free to put any user code."
 
   (global-set-key (kbd "s-n") 'ansi-term)
   (setq projectile-switch-project-action 'magit-status)
-)
+  (setq mark-ring-max 1000)
+  (setq global-mark-ring-max 1000)
+  (setq avy-all-windows nil))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
