@@ -11,7 +11,7 @@ source $BASH_IT/bash_it.sh
 
 
 export EDITOR=emacsclient
-
+export GIT_EDITOR=$EDITOR
 
 alias lock=/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
 
@@ -28,10 +28,6 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH="/opt/homebrew-cask/Caskroom/racket/6.1.1/Racket\ v6.1.1/bin/raco:$PATH"
 
 # export PATH="/usr/local/Cellar/ruby20/2.0.0-p481/bin:$PATH"
-
-export GIT_EDITOR='emacsclient -s server'
-export EDITOR=$GIT_EDITOR
-
 
 
 git-on-branch () {
