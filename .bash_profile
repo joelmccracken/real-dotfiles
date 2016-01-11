@@ -9,4 +9,10 @@ export BASH_IT_THEME="bobby"
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
+
+export EDITOR=emacsclient
+
+
+alias lock=/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+
 source /Users/joel/.rvm/scripts/rvm
