@@ -10,6 +10,7 @@
 
 # ??
 .Xauthority
+.cups/lpoptions
 
 # Caches/languages/tools stuff
 # (that doesn't need VC'd)
