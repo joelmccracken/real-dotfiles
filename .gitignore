@@ -44,9 +44,9 @@
 
 # app stuff
 .dropbox
-.geeknote 
+.geeknote
 #  -- just an error log and db cache
-.tox 
+.tox
 #  -- another part of geeknote
 .heroku
 .local
@@ -97,3 +97,6 @@ var
 .CFUserTextEncoding
 .DS_Store
 .Trash
+
+# log files
+.funstation.d/daemon.log
