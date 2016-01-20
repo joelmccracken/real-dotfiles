@@ -105,4 +105,27 @@ do
     pathmagic $i
 done
 
+
+
+
+do_command_done_alert() {
+    osascript -e 'display dialog "Command Done!"'
+}
+
+alert_when_done() {
+    if test -n "$1";
+    then
+        while kill -0 $1
+        do
+            sleep 1
+        done
+    fi
+    do_command_done_alert
+}
+
+replace_in_ruby_files(){
+    LANG=UTF-8 find . -name '*.rb' -not -path './.gems/*' -exec ruby -p -i -e "gsub(/$1/, '$2')" {} \; ;
+
+}
+
 source /Users/joel/.rvm/scripts/rvm
