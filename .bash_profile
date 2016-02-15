@@ -90,7 +90,6 @@ function $i {
     if [[ -e \"\$DIR/bin/$i\" ]];
     then
         path="\$DIR/bin/$i"
-        echo USING \$path
         \"\$path\" \"\$@\"
     else
         command $i \"\$@\"
@@ -125,7 +124,14 @@ alert_when_done() {
 
 replace_in_ruby_files(){
     LANG=UTF-8 find . -name '*.rb' -not -path './.gems/*' -exec ruby -p -i -e "gsub(/$1/, '$2')" {} \; ;
+}
 
+replace_in_ruby_files2(){
+    LANG=UTF-8 ruby -p -i -e "gsub(/$1/, '$2')"
+}
+
+delete_old_branches() {
+    git branch --merged rc | grep -v "\* rc" | xargs -n 1 git branch -d
 }
 
 source /Users/joel/.rvm/scripts/rvm
