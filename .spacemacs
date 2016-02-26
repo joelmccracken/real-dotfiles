@@ -293,7 +293,13 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(magit-push-arguments (quote ("--set-upstream")))
- '(paradox-github-token t))
+ '(paradox-github-token t)
+ '(safe-local-variable-values
+   (quote
+    ((eval progn
+           (make-local-variable
+            (quote projectile-make-test-cmd))
+           (setq projectile-ruby-test-cmd "rake"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
