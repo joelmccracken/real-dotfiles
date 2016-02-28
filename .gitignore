@@ -100,3 +100,4 @@ var
 
 # log files
 .funstation.d/daemon.log
+.lldb

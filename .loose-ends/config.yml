@@ -1,0 +1,9 @@
+---
+:issue_count: ~/var/loose-ends/count
+:issue_list: ~/var/loose-ends/list
+:git_dirs:
+#  - ~/vagrant-environment/apangea
+  - ~/Projects/*
+  - ~/
+:inbox_dirs:
+#  - ~/Inbox
