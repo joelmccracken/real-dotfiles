@@ -134,4 +134,9 @@ delete_old_branches() {
     git branch --merged rc | grep -v "\* rc" | xargs -n 1 git branch -d
 }
 
+bash_simple_prompt() {
+    PS1=\$\  bash
+}
+
+
 source /Users/joel/.rvm/scripts/rvm
