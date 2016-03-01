@@ -95,6 +95,7 @@ var
 .DS_Store
 .Trash
 
-# log files
+# log files, caches
 .funstation.d/daemon.log
 .lldb
+.loose-ends/cache
