@@ -99,3 +99,4 @@ var
 .funstation.d/daemon.log
 .lldb
 .loose-ends/cache
+.loose-ends/error-log
