@@ -17,10 +17,14 @@ module LooseEnds
         IncomingDirChecker.new(dir, nil)
       }
 
-      issues = checkers.map { |checker| checker.check }
+      issues = checkers.flat_map { |checker| checker.check }.reject(&:nil?)
 
-      issues.each do |msg|
-        puts msg
+      config_loc = File.expand_path("~/.loose-ends/cache")
+      File.open(config_loc, "w+") do |f|
+        issues.each do |msg|
+          puts msg
+          f.puts msg
+        end
       end
     end
 

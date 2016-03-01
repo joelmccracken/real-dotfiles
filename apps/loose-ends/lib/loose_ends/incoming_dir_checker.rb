@@ -11,11 +11,9 @@ module LooseEnds
       Dir.chdir(File.expand_path @incoming_path) do
         content = Dir["*"]
 
-
         if content.count > 0
           "#{@incoming_path}: #{content.count} files"
         end
-
       end
     end
   end
