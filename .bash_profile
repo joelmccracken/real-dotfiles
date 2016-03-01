@@ -59,11 +59,11 @@ function on-branch {
 }
 
 function alerts_prompt {
-    cat ~/var/alerts/number
+    wc -l ~/.loose-ends/cache | awk '{print $1}'
 }
 
 function alerts {
-    cat ~/var/alerts/alerts
+    cat ~/.loose-ends/cache
 }
 
 function jnm_prompt_command {
