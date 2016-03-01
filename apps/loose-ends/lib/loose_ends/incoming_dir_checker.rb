@@ -12,7 +12,7 @@ module LooseEnds
         content = Dir["*"]
 
         if content.count > 0
-          "#{@incoming_path}: #{content.count} files"
+          Info("#{@incoming_path}: #{content.count} files")
         end
       end
     end
