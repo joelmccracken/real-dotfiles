@@ -282,7 +282,109 @@ layers configuration. You are free to put any user code."
   (setq mark-ring-max 1000)
   (setq global-mark-ring-max 1000)
   (setq avy-all-windows nil)
+
   (defvar spacemacs-mode-line-new-version-lighterp t)
+
+
+  (defun jnm/reset-term-mode ()
+    "Switch to fundamental mode, then back again.
+
+This is an attempt to fix the occasional term mode problem."
+    (interactive)
+    (fundamental-mode)
+    (term-mode))
+
+  (define-key term-raw-map (kbd "s-R") 'jnm/reset-term-mode)
+  (define-key term-mode-map (kbd "s-R") 'jnm/reset-term-mode)
+
+
+
+
+  ;; this bit of code is used to generate the list of all the variables to log
+  ;; im just stcking it here so I dont need to re-figure it out
+  (when nil
+    (setq t-syms nil)
+
+    (mapatoms (lambda (x)
+
+                (when (and (string-match "^term"
+                                         (symbol-name x))
+                           (not (functionp x))
+                           (get x 'variable-documentation))
+                  (add-to-list 't-syms x)
+                  ))))
+  (setq jnm/debug-term-mode-vars
+        '(term-input-filter-functions
+          term-prompt-regexp
+          term-kill-echo-list
+          term-suppress-hard-newline
+          term-file-name-prefix
+          term-scroll-to-bottom-on-output
+          term-escape-char
+          term-dynamic-complete-functions
+          term-termcap-format
+          term-default-fg-color
+          term-input-filter
+          term-completion-addsuffix
+          term-input-ignoredups
+          term-input-ring-file-name
+          term-last-input-match
+          term-pager-count
+;;          term-mode-map
+          term-saved-home-marker
+          term-term-name
+          term-scroll-show-maximum-output
+          term-input-ring-index
+          term-default-bg-color
+          term-scroll-start
+          term-terminal-state
+          term-ptyp
+;;          term-pager-break-map
+          term-exec-hook
+          term-completion-recexact
+          term-input-chunk-size
+          term-scroll-with-delete
+          terminal-frame
+;;          term-mode-syntax-table
+          term-buffer-maximum-size
+          term-input-autoexpand
+;;          term-raw-map
+          term-get-old-input
+          term-matching-input-from-input-string
+          term-file-prefix
+          term-mode-hook
+          term-eol-on-send
+          term-delimiter-argument-list
+;;          term-pager-old-local-map
+;;          term-old-mode-map
+          term-load-hook
+          term-input-ring-size
+          term-input-sender
+          term-completion-autolist
+          term-setup-hook
+          term-mode-abbrev-table
+          term-completion-fignore))
+
+  (defun jnm/debug-term-mode ()
+    "debug term mode, run from term"
+    (interactive)
+
+    (with-current-buffer (get-buffer-create "*debug-term-log*")
+      (goto-char (point-max))
+      (insert "\n")
+      (insert "term mode debugging:\n")
+      (insert "--------------------\n")
+
+      (-each jnm/debug-term-mode-vars
+        (lambda (var)
+          (insert (format "%S: %S\n" var (eval var)))))
+      (insert "\n\n\n"))
+
+    (message "Debug output sent to *debug-term-log*")
+    )
+
+  (define-key term-raw-map (kbd "s-d") 'jnm/debug-term-mode)
+  (define-key term-mode-map (kbd "s-d") 'jnm/debug-term-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
