@@ -84,6 +84,7 @@ var
 .gnupg
 .papertrail.yml
 .ssh
+.vault-token
 
 # garbage
 .oracle_jre_usage
