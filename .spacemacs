@@ -294,6 +294,7 @@ This is an attempt to fix the occasional term mode problem."
     (fundamental-mode)
     (term-mode))
 
+  (require 'term)
   (define-key term-raw-map (kbd "s-R") 'jnm/reset-term-mode)
   (define-key term-mode-map (kbd "s-R") 'jnm/reset-term-mode)
 
@@ -385,6 +386,8 @@ This is an attempt to fix the occasional term mode problem."
 
   (define-key term-raw-map (kbd "s-d") 'jnm/debug-term-mode)
   (define-key term-mode-map (kbd "s-d") 'jnm/debug-term-mode)
+  (setq git-magit-status-fullscreen t)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
