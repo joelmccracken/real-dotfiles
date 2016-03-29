@@ -18,6 +18,9 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     javascript
+     html
+     yaml
      ruby
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
