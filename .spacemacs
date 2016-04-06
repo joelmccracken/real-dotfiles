@@ -422,6 +422,28 @@ This is an attempt to fix the occasional term mode problem."
  '(safe-local-variable-values
    (quote
     ((eval progn
+           (load
+            (concat
+             (locate-dominating-file load-file-name "ef.el")
+             "ef.el")))
+     (eval progn
+           (load
+            (concat
+             (locate-dominating-file
+              (buffer-file-name)
+              "ef.el")
+             "ef.el")))
+     (eval progn
+           (load
+            (expand-file-name
+             (locate-dominating-file "ef.el"))))
+     (ef/files "actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org")
+     (ef/files quote
+               ("actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org"))
+     (eval progn
+           (load
+            (expand-file-name "./ef.el")))
+     (eval progn
            (make-local-variable
             (quote projectile-make-test-cmd))
            (setq projectile-ruby-test-cmd "rake"))))))
