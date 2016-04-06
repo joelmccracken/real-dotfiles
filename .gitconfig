@@ -8,3 +8,7 @@ email = mccracken.joel@gmail.com
 	email = mccracken.joel@gmail.com
 [push]
 	default = simple
+[merge]
+	conflictstyle = diff3
+[diff]
+	algorithm = patience
