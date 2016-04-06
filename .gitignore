@@ -102,3 +102,4 @@ var
 .lldb
 .loose-ends/cache
 .loose-ends/error-log
+.swipl-dir-history
