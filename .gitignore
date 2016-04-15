@@ -76,6 +76,7 @@ Sites
 VirtualBox VMs
 vagrant-environment
 var
+browser-sessions
 
 # SSHHHHH SECRETS
 .pgpass
