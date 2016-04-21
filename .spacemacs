@@ -424,6 +424,11 @@ This is an attempt to fix the occasional term mode problem."
     ((eval progn
            (load
             (concat
+             (locate-dominating-file default-directory "ef.el")
+             "ef.el")))
+     (eval progn
+           (load
+            (concat
              (locate-dominating-file load-file-name "ef.el")
              "ef.el")))
      (eval progn
