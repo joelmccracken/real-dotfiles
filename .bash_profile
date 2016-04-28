@@ -29,6 +29,7 @@ export PATH="/opt/homebrew-cask/Caskroom/racket/6.1.1/Racket\ v6.1.1/bin/raco:$P
 
 # export PATH="/usr/local/Cellar/ruby20/2.0.0-p481/bin:$PATH"
 
+export LANG=en_US.UTF-8
 
 git-on-branch () {
     git stash
