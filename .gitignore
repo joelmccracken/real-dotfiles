@@ -92,6 +92,7 @@ browser-sessions
 .oracle_jre_usage
 .viminfo
 .rnd
+.bash_sessions
 
 # os x stuff
 .CFUserTextEncoding
