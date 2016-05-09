@@ -279,6 +279,11 @@ you should place you code here."
     (interactive)
     (set-face-attribute 'default nil :height 125))
 
+  (setq javascript-indent-level 2)
+
+
+  (setq web-mode-markup-indentation 2)
+
   (global-set-key (kbd "s-e") 'embiggen-steve)
   (global-set-key (kbd "s-E") 'not-steve)
 
