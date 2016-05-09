@@ -324,6 +324,10 @@ This is an attempt to fix the occasional term mode problem."
   (define-key term-mode-map (kbd "s-R") 'jnm/reset-term-mode)
 
 
+  (defun ruby-local-to-let ()
+    (interactive)
+    (kmacro-exec-ring-item (quote ([108 101 116 40 4 58 19 32 return 2 41 4 4 32 123 4 5 32 63 backspace 125 16 14] 0 "%d")) nil))
+
 
 
   ;; this bit of code is used to generate the list of all the variables to log
