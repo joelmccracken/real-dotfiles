@@ -417,6 +417,10 @@ This is an attempt to fix the occasional term mode problem."
   (define-key term-mode-map (kbd "s-d") 'jnm/debug-term-mode)
   (setq git-magit-status-fullscreen t)
 
+  (add-to-list 'load-path "~/Projects/process-inbox")
+
+  (require 'process-inbox)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
