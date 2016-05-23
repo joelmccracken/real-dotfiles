@@ -430,27 +430,15 @@ This is an attempt to fix the occasional term mode problem."
  '(paradox-github-token t)
  '(safe-local-variable-values
    (quote
-    ((eval progn
-           (load
-            (concat
-             (locate-dominating-file default-directory "ef.el")
-             "ef.el")))
+    ((encoding . utf-8)
      (eval progn
-           (load
-            (concat
-             (locate-dominating-file load-file-name "ef.el")
-             "ef.el")))
-     (eval progn
-           (load
-            (concat
-             (locate-dominating-file
-              (buffer-file-name)
-              "ef.el")
-             "ef.el")))
-     (eval progn
-           (load
-            (expand-file-name
-             (locate-dominating-file "ef.el"))))
+           (let*
+               ((load-path
+                 (cons
+                  (locate-dominating-file default-directory "ef.el")
+                  load-path)))
+             (require
+              (quote ef))))
      (ef/files "actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org")
      (ef/files quote
                ("actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org"))
