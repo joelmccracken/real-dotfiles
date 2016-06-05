@@ -26,6 +26,8 @@ module LooseEnds
           f.puts msg
         end
       end
+      config_loc = File.expand_path("~/.loose-ends/cache")
+      File.write(File.expand_path("~/.loose-ends/last-run"), DateTime.now.strftime("%I:%M %p %a %d-%m-%Y"))
     end
 
     private
