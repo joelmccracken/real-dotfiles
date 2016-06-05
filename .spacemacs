@@ -340,60 +340,138 @@ This is an attempt to fix the occasional term mode problem."
                 (when (and (string-match "^term"
                                          (symbol-name x))
                            (not (functionp x))
-                           (get x 'variable-documentation))
+                           ;; (get x 'variable-documentation)
+
+                           )
                   (add-to-list 't-syms x)
                   ))))
+
   (setq jnm/debug-term-mode-vars
         '(term-input-filter-functions
-          term-prompt-regexp
-          term-kill-echo-list
-          term-suppress-hard-newline
-          term-file-name-prefix
-          term-scroll-to-bottom-on-output
-          term-escape-char
-          term-dynamic-complete-functions
-          term-termcap-format
-          term-default-fg-color
-          term-input-filter
-          term-completion-addsuffix
-          term-input-ignoredups
-          term-input-ring-file-name
-          term-last-input-match
-          term-pager-count
-;;          term-mode-map
-          term-saved-home-marker
-          term-term-name
-          term-scroll-show-maximum-output
-          term-input-ring-index
-          term-default-bg-color
-          term-scroll-start
-          term-terminal-state
-          term-ptyp
-;;          term-pager-break-map
-          term-exec-hook
-          term-completion-recexact
-          term-input-chunk-size
-          term-scroll-with-delete
-          terminal-frame
-;;          term-mode-syntax-table
-          term-buffer-maximum-size
-          term-input-autoexpand
-;;          term-raw-map
-          term-get-old-input
-          term-matching-input-from-input-string
-          term-file-prefix
-          term-mode-hook
-          term-eol-on-send
-          term-delimiter-argument-list
-;;          term-pager-old-local-map
-;;          term-old-mode-map
-          term-load-hook
-          term-input-ring-size
-          term-input-sender
-          term-completion-autolist
-          term-setup-hook
-          term-mode-abbrev-table
-          term-completion-fignore))
+         term-prompt-regexp
+         term-kill-echo-list
+;;         term-pending-delete-marker
+         term-suppress-hard-newline
+         term-terminal-previous-parameter
+         term-file-name-prefix
+         term-scroll-to-bottom-on-output
+         term-home-marker
+         terminals
+         term-page
+         term-escape-char
+         term-dynamic-complete-functions
+         term-termcap-format
+         term-bind-key-alist
+         Terminal
+;;         term-raw-escape-map
+         term-default-fg-color
+         term-ansi-at-user
+         term-input-filter
+         term-in-char-mode
+         term-completion-addsuffix
+         term-pending-frame
+         term-ansi-current-color
+         term-input-ignoredups
+         term-color-green
+         term-ansi-face-already-done
+         term-input-ring-file-name
+         term-log-buffer
+         term-ansi-current-reverse
+         term-input-ring
+         term-last-input-match
+         term-ansi-current-bold
+         term-underline
+         term-pager-count
+         term-cmd
+;;         term-mode-map
+         term-pager-filter
+         term-ansi-at-message
+         term-saved-home-marker
+         term-color-magenta
+         term-using-alternate-sub-buffer
+         term-ansi-at-host
+         term-term-name
+         term-color-black
+         term-saved-cursor
+         term-init-func
+         term-terminal-previous-parameter-2
+         term-terminal-previous-parameter-3
+         term-terminal-previous-parameter-4
+         term-scroll-show-maximum-output
+         term-input-ring-index
+;;         term-display-table
+         term-default-bg-color
+         term-scroll-start
+         term-pager-enabled
+         term-terminal-state
+         term-ansi-buffer-name
+         term-ansi-current-invisible
+         term+
+         term-ptyp
+         term-last-input-end
+         term-pos
+;;         term-pager-break-map
+         term-current-face
+         term-ansi-default-program
+         term-exec-hook
+         term-bold
+         term-completion-recexact
+         term-ansi-at-save-pwd
+         term-ansi-buffer-base-name
+         term-input-chunk-size
+         term-scroll-with-delete
+         terminal-frame
+;;         term-mode-syntax-table
+         term-color-yellow
+         term-width
+         term-insert-mode
+         term-buffer-maximum-size
+         term-input-autoexpand
+;;         term-raw-map
+         term+mux
+         term-color-cyan
+         term-terminal-more-parameters
+         term-terminal-parameter
+         term-get-old-input
+         term-vertical-motion
+         terminal
+         term-matching-input-from-input-string
+         term-file-prefix
+         term-scroll-end
+         term-protocol-version
+         termbright-theme
+         term-mode-hook
+         term-alert
+         term+key-intercept
+         term-eol-on-send
+         term-delimiter-argument-list
+         term-old-mode-line-format
+         term-ansi-at-dir
+;;         term-pager-old-local-map
+         term-ansi-at-save-user
+         term-in-line-mode
+         terminal-initted
+;;         term-old-mode-map
+         term-load-hook
+         term-ansi-at-save-anon
+         term-color-red
+         terminal-init-xterm-hook
+         term-input-ring-size
+         term-input-sender
+         term-completion-autolist
+         term-color-white
+         term-run
+         term-setup-hook
+;;         term-mode-abbrev-table
+         term-pager-old-filter
+         term-last-input-start
+         term-ansi-current-bg-color
+         term-ansi-current-underline
+         term-color-blue
+         term-completion-fignore
+         term-handling-pager
+         terminator
+         term-height))
 
   (defun jnm/debug-term-mode ()
     "debug term mode, run from term"
@@ -407,11 +485,12 @@ This is an attempt to fix the occasional term mode problem."
 
       (-each jnm/debug-term-mode-vars
         (lambda (var)
-          (insert (format "%S: %S\n" var (eval var)))))
+          (ignore-errors
+              (insert (format "%S: %S\n" var (eval var)))))
       (insert "\n\n\n"))
 
     (message "Debug output sent to *debug-term-log*")
-    )
+    ))
 
   (define-key term-raw-map (kbd "s-d") 'jnm/debug-term-mode)
   (define-key term-mode-map (kbd "s-d") 'jnm/debug-term-mode)
