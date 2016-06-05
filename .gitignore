@@ -104,4 +104,5 @@ browser-sessions
 .lldb
 .loose-ends/cache
 .loose-ends/error-log
+.loose-ends/last-run
 .swipl-dir-history
