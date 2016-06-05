@@ -421,6 +421,9 @@ This is an attempt to fix the occasional term mode problem."
 
   (require 'process-inbox)
 
+  (spacemacs/set-leader-keys-for-major-mode 'enh-ruby-mode
+    "tb" 'ruby-test-run
+    "tt" 'ruby-test-run-at-point)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
