@@ -1,3 +1,4 @@
 #! /usr/bin/env bash
-
+set -e
 sudo chown -R $(whoami) /usr/local
+sudo chmod -R 0700 /usr/local/var/postgres

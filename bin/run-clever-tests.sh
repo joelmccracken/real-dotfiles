@@ -8,7 +8,6 @@ bin/m test/unit/clever/sync/teacher_test.rb
 bin/m test/unit/clever/synchronizer_test.rb
 bin/m test/unit/clever/updater_test.rb
 bin/m test/unit/clever_event_processor_test.rb
-bin/m test/unit/clever_results_query_test.rb
 bin/m test/unit/clever_slever_test.rb
 bin/m test/unit/clever_utils_test.rb
 bin/m test/fast/clever_event_collection_test.rb
