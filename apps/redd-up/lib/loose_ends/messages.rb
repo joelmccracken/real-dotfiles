@@ -1,4 +1,4 @@
-module LooseEnds
+module ReddUp
   Error = Struct.new(:error) do
     def to_s
       "Error(#{error})"

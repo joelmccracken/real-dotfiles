@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-exec ~/apps/loose-ends/bin/loose-ends "$@"

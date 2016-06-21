@@ -1,4 +1,4 @@
-module LooseEnds
+module ReddUp
   class GitRepoChecker
     def initialize(repo_path, obj)
       @repo_path = repo_path

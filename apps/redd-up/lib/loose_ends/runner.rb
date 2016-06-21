@@ -1,6 +1,6 @@
 require 'yaml'
 
-module LooseEnds
+module ReddUp
   class Runner
     def run
       config_loc = File.expand_path("~/.loose-ends/config.yml")

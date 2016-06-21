@@ -1,4 +1,4 @@
-module LooseEnds
+module ReddUp
   class IncomingDirChecker
     attr_accessor :incoming_path
 
