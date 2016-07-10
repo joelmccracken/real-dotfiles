@@ -139,5 +139,18 @@ bash_simple_prompt() {
     PS1=\$\  bash
 }
 
+m_on_each() {
+    while read file;
+    do
+        if [[ -f "$file" ]];
+        then
+            bundle exec m "$file";
+        fi;
+    done
+}
+
+find_test_files_matching() {
+    find . -path './test/*_test.rb' "$@"
+}
 
 source /Users/joel/.rvm/scripts/rvm
