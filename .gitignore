@@ -106,3 +106,4 @@ browser-sessions
 .loose-ends/error-log
 .loose-ends/last-run
 .swipl-dir-history
+.cpu.history
