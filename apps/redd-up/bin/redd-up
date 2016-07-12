@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/loose_ends'
+require_relative '../lib/redd_up'
 ReddUp::Runner.new.run

@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.joelmccracken.loose-ends</string>
+  <string>com.joelmccracken.redd-up</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/joel/bin/loose-ends</string>
+    <string>/Users/joel/bin/redd-up</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
   <key>StandardErrorPath</key>
-  <string>/Users/joel/.loose-ends/error-log</string>
+  <string>/Users/joel/.redd-up/error-log</string>
   <key>StartInterval</key>
   <integer>60</integer>
 </dict>

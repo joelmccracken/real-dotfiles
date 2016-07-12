@@ -3,7 +3,7 @@ require 'yaml'
 module ReddUp
   class Runner
     def run
-      config_loc = File.expand_path("~/.loose-ends/config.yml")
+      config_loc = File.expand_path("~/.redd-up/config.yml")
       unless File.exists?(config_loc)
         $stderr.puts "Error: no config file found at #{config_loc}"
         exit! 123
@@ -19,15 +19,15 @@ module ReddUp
 
       issues = checkers.flat_map { |checker| checker.check }.reject(&:nil?)
 
-      config_loc = File.expand_path("~/.loose-ends/cache")
+      config_loc = File.expand_path("~/.redd-up/cache")
       File.open(config_loc, "w+") do |f|
         issues.each do |msg|
           puts msg
           f.puts msg
         end
       end
-      config_loc = File.expand_path("~/.loose-ends/cache")
-      File.write(File.expand_path("~/.loose-ends/last-run"), DateTime.now.strftime("%I:%M %p %a %d-%m-%Y"))
+      config_loc = File.expand_path("~/.redd-up/cache")
+      File.write(File.expand_path("~/.redd-up/last-run"), DateTime.now.strftime("%I:%M %p %a %d-%m-%Y"))
     end
 
     private

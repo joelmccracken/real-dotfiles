@@ -1,9 +1,9 @@
 #!/bin/bash
 
-number=`cat ~/.loose-ends/cache | wc -l`
+number=`cat ~/.redd-up/cache | wc -l`
 
 echo "Untidy: $number| color=red"
 
 echo ---
 
-cat ~/.loose-ends/cache
+cat ~/.redd-up/cache

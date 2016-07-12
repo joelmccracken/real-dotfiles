@@ -60,11 +60,11 @@ function on-branch {
 }
 
 function alerts_prompt {
-    wc -l ~/.loose-ends/cache | awk '{print $1}'
+    wc -l ~/.redd-up/cache | awk '{print $1}'
 }
 
 function alerts {
-    cat ~/.loose-ends/cache
+    cat ~/.redd-up/cache
 }
 
 function jnm_prompt_command {

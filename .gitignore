@@ -102,8 +102,8 @@ browser-sessions
 # log files, caches
 .funstation.d/daemon.log
 .lldb
-.loose-ends/cache
-.loose-ends/error-log
-.loose-ends/last-run
+.redd-up/cache
+.redd-up/error-log
+.redd-up/last-run
 .swipl-dir-history
 .cpu.history
