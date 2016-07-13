@@ -86,7 +86,7 @@ values."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'hybrid
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -503,6 +503,8 @@ This is an attempt to fix the occasional term mode problem."
   (spacemacs/set-leader-keys-for-major-mode 'enh-ruby-mode
     "tb" 'ruby-test-run
     "tt" 'ruby-test-run-at-point)
+
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
