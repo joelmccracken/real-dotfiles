@@ -144,7 +144,7 @@ m_on_each() {
     do
         if [[ -f "$file" ]];
         then
-            bundle exec m "$file";
+            bundle exec m "$file" || exit $?;
         fi;
     done
 }
