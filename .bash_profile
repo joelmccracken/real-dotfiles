@@ -24,7 +24,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=~/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
-
+export PATH=$HOME/ttm/devtools/bin:$PATH
 export PATH="/opt/homebrew-cask/Caskroom/racket/6.1.1/Racket\ v6.1.1/bin/raco:$PATH"
 
 # export PATH="/usr/local/Cellar/ruby20/2.0.0-p481/bin:$PATH"
@@ -70,7 +70,7 @@ function alerts {
 function jnm_prompt_command {
     PS1="\n$(alerts_prompt) ${yellow}$(ruby_version_prompt) ${purple}\h ${reset_color}in ${green}\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color} "
 }
-PROMPT_COMMAND=jnm_prompt_command;
+# PROMPT_COMMAND=jnm_prompt_command;
 
 function save(){ echo "$@" >> ~/var/saved_commands; }
 
@@ -100,10 +100,10 @@ function $i {
 }
 
 
-for i in rails m rake ttmscalr foreman;
-do
-    pathmagic $i
-done
+# for i in rails m rake ttmscalr foreman;
+# do
+#     pathmagic $i
+# done
 
 
 
