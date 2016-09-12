@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/redd_up'
-ReddUp::Runner.new.run
+ReddUp::Runner.new.run ARGV

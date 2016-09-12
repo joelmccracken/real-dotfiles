@@ -2,7 +2,7 @@ require 'yaml'
 
 module ReddUp
   class Runner
-    def run
+    def run(arguments)
       config_loc = File.expand_path("~/.redd-up/config.yml")
       unless File.exists?(config_loc)
         $stderr.puts "Error: no config file found at #{config_loc}"
