@@ -79,6 +79,8 @@ var
 browser-sessions
 
 # SSHHHHH SECRETS
+.rclone.conf
+.lpass
 .pgpass
 .netrc
 .ttm_scalr_access_info
@@ -93,6 +95,8 @@ browser-sessions
 .viminfo
 .rnd
 .bash_sessions
+.dialyxir_core_*.plt
+
 
 # os x stuff
 .CFUserTextEncoding
