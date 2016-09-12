@@ -8,7 +8,7 @@
 # <bitbar.image>http://i.imgur.com/T0zFY89.png</bitbar.image>
 
 WORK_TIME=25
-BREAK_TIME=3
+BREAK_TIME=5
 
 SAVE_LOCATION=$TMPDIR/bitbar-promodo
 TOMATO='🍅'
@@ -95,7 +95,8 @@ case "$STATUS" in
 "2")
     TIME_LEFT=$(timeLeft $BREAK_TIME_IN_SECONDS)
     if (("$TIME_LEFT" < 0)); then
-        workMode
+        changeStatus "0" "break is over" "Blow"
+        # workMode
     fi
     printTime "$TIME_LEFT" "green"
   ;;
