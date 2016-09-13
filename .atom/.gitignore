@@ -4,3 +4,6 @@ dev
 storage
 .node-gyp
 .npm
+.apm
+# not sure about packages... maybe should not hide?
+packages
