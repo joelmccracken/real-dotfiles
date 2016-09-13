@@ -8,9 +8,24 @@ module ReddUp
         $stderr.puts "Error: no config file found at #{config_loc}"
         exit! 123
       end
-
       config = YAML.load_file(config_loc)
 
+      case arguments.first
+      when "check" then check(config)
+      else raise "Unknown option: #{arguments}"
+      end
+
+    end
+
+    private
+
+    def expand_paths_array(paths)
+      paths.flat_map { |dirspec|
+        Dir[File.expand_path(dirspec)]
+      }
+    end
+
+    def check(config)
       checkers = expand_paths_array(config[:git_dirs] || []).map { |dir|
         GitRepoChecker.new(dir, nil)
       } + expand_paths_array(config[:inbox_dirs] || []).map { |dir|
@@ -28,14 +43,8 @@ module ReddUp
       end
       config_loc = File.expand_path("~/.redd-up/cache")
       File.write(File.expand_path("~/.redd-up/last-run"), DateTime.now.strftime("%I:%M %p %a %d-%m-%Y"))
+
     end
 
-    private
-
-    def expand_paths_array(paths)
-      paths.flat_map { |dirspec|
-        Dir[File.expand_path(dirspec)]
-      }
-    end
   end
 end
