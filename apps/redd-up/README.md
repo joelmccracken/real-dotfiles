@@ -1,3 +1,6 @@
-# Loose Ends
+# Redd-up
 
-A checker for loose ends on the system
+A set of scripts to support keeping your system clean
+
+## test
+`ruby test/run.rb`

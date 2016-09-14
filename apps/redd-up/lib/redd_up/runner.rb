@@ -43,8 +43,6 @@ module ReddUp
       end
       config_loc = File.expand_path("~/.redd-up/cache")
       File.write(File.expand_path("~/.redd-up/last-run"), DateTime.now.strftime("%I:%M %p %a %d-%m-%Y"))
-
     end
-
   end
 end
