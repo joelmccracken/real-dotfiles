@@ -7,7 +7,7 @@
 # <bitbar.desc>Pomodoro Timer that uses Pomodoro Technique™</bitbar.desc>
 # <bitbar.image>http://i.imgur.com/T0zFY89.png</bitbar.image>
 
-WORK_TIME=25
+WORK_TIME=15
 BREAK_TIME=5
 
 SAVE_LOCATION=$TMPDIR/bitbar-promodo
