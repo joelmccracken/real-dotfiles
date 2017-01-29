@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec ~/Projects/git-stuff/dist/build/git-stuff-exe/git-stuff-exe
