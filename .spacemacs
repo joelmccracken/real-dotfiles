@@ -42,7 +42,9 @@ values."
      javascript
      html
      yaml
-     (ruby :variables ruby-enable-enh-ruby-mode t)
+     (ruby :variables
+           ruby-enable-enh-ruby-mode t
+           ruby-version-manager 'rvm)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
