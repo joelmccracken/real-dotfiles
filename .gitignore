@@ -90,7 +90,7 @@ browser-sessions
 .papertrail.yml
 .ssh
 .vault-token
-
+.toodledo
 # garbage
 .oracle_jre_usage
 .viminfo
