@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+def install
+  install_dir = File.expand_path("~/install")
+  puts "Installing..."
+  Dir.chdir install_dir do
+    Dir["*"].each do |file|
+      puts "installing #{file}"
+      if File.executable?(file)
+        spawn("./#{file}")
+      else
+        puts "Warning: #{file} not executable"
+      end
+    end
+  end
+end
+
+
+
+def check
+  check_dir = File.expand_path("~/check")
+  puts "Checking..."
+  Dir.chdir check_dir do
+    Dir["*"].each do |file|
+      puts "checking #{file}"
+      if File.executable?(file)
+        spawn("./#{file}")
+      else
+        puts "Warning: #{file} not executable"
+      end
+    end
+  end
+end
+
+
+
+case ARGV.first
+when "install" then install
+when "check"   then check
+end
