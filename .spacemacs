@@ -551,7 +551,10 @@ This is an attempt to fix the occasional term mode problem."
 
   (setq git-magit-status-fullscreen t)
 
+  (setq js-indent-level 2)
+
   (setq elm-format-on-save t)
+
   (add-to-list 'load-path "~/Projects/process-inbox")
   (require 'process-inbox)
 
