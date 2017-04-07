@@ -1,7 +1,7 @@
 export PATH="/usr/local/bin:$PATH"
 
 # Path to the bash it configuration
-export BASH_IT="/Users/joel/.bash_it"
+export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 export BASH_IT_THEME="bobby"
@@ -39,8 +39,6 @@ git-on-branch () {
     git checkout $ORIGINAL_BRANCH
     git stash pop
 }
-
-alias vesh="cd ~/vagrant-environment/apangea; vagrant ssh"
 
 shopt -s extglob
 
@@ -153,4 +151,8 @@ find_test_files_matching() {
     find . -path './test/*_test.rb' "$@"
 }
 
-source /Users/joel/.rvm/scripts/rvm
+rvm_script="$HOME/.rvm/scripts/rvm"
+
+if [ -e "$rvm_script" ]; then
+    source "$rvm_script";
+fi
