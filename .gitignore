@@ -97,6 +97,7 @@ secrets
 .ssh
 .vault-token
 .toodledo
+.account
 
 # garbage
 .oracle_jre_usage
