@@ -8,6 +8,10 @@
 .psql_history
 .node_repl_history
 
+## temporary
+# will eventually want this to be managed in this repo (probably?)
+.propellor
+
 # ??
 .Xauthority
 .cups/lpoptions
@@ -91,6 +95,7 @@ browser-sessions
 .ssh
 .vault-token
 .toodledo
+
 # garbage
 .oracle_jre_usage
 .viminfo
