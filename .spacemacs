@@ -340,7 +340,10 @@ you should place your code here."
   (global-set-key (kbd "s-E") 'not-steve)
 
   (setq-default evil-escape-key-sequence "jk")
-  ;; turn off disabling evil-escape-mode
+  (setq evil-escape-key-sequence nil)
+  (setq evil-escape-key-sequence "jk")
+
+  (add-to-list 'evil-escape-excluded-major-modes 'term-mode)
 
   (add-to-list 'evil-emacs-state-modes 'magit-mode)
 
@@ -547,7 +550,7 @@ This is an attempt to fix the occasional term mode problem."
   (define-key term-raw-map (kbd "s-d") 'jnm/debug-term-mode)
   (define-key term-mode-map (kbd "s-d") 'jnm/debug-term-mode)
 
-  (setq delete-by-moving-to-trash t)
+  (setq delete-by-moving-to-trash nil)
 
   (setq git-magit-status-fullscreen t)
 
