@@ -85,6 +85,7 @@ var
 browser-sessions
 
 # SSHHHHH SECRETS
+secrets
 .rclone.conf
 .lpass
 .pgpass

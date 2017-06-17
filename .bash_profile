@@ -44,7 +44,7 @@ alias vesh="cd ~/vagrant-environment/apangea; vagrant ssh"
 
 shopt -s extglob
 
-ssh-add `ls ~/var/secrets/id_rsa* | grep -v .pub` > /dev/null 2>&1
+ssh-add `ls ~/secrets | grep id_rsa | grep -v .pub` > /dev/null 2>&1
 
 function aalias {
     mkdir -p ~/.bash_it/custom/
