@@ -122,3 +122,25 @@ secrets
 .swipl-dir-history
 .cpu.history
 .ex_supervisor
+
+
+
+# misc, uncategorized yet
+.ammonite/
+.anaconda/
+.bash_profile-anaconda.bak
+.bash_profile-anaconda2.bak
+.conda/
+.condarc
+.continuum/
+.coursier/
+.dotnet/
+.eclipse/
+.ipython/
+.ivy2/
+.nuget/
+.sbt/
+.scalaide/
+api_cache/
+project/
+secret
