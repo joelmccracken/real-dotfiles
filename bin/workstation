@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby
 
+require 'bundler/inline'
+
+gemfile true do
+  source 'https://rubygems.org'
+  gem 'childprocess', '~>0.7'
+  gem 'colorize', '~>0.8'
+end
+
+
 def install
   install_dir = File.expand_path("~/install")
   puts "Installing..."
@@ -22,17 +31,25 @@ def check
   puts "Checking..."
   Dir.chdir check_dir do
     Dir["*"].each do |file|
-      puts "checking #{file}"
+      puts "running #{file}"
       if File.executable?(file)
-        spawn("./#{file}")
+        process = ChildProcess.build("./#{file}")
+        process.io.inherit!
+
+        Bundler.with_clean_env do
+          process.start
+        end
+
+        process.wait
+        if process.exit_code != 0
+          puts "Warning: #{file} finished with exit code #{process.exit_code}".red
+        end
       else
-        puts "Warning: #{file} not executable"
+        puts "Warning: #{file} not executable".red
       end
     end
   end
 end
-
-
 
 case ARGV.first
 when "install" then install
