@@ -156,3 +156,4 @@ rvm_script="$HOME/.rvm/scripts/rvm"
 if [ -e "$rvm_script" ]; then
     source "$rvm_script";
 fi
+if [ -e /Users/jmccracken/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jmccracken/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
