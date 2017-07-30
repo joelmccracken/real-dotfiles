@@ -2,6 +2,10 @@
 
 my actual dotfiles & workstation setup/configuration scripts
 
+# developing a "bootstrap" script
+- done work getting `brew bundle` set up; seems to work reasonably well
+- developed `workstation bootstrap` to support installation etc of bundler
+
 # components
 
 ~/bin/workstation contains the two commands `workstation install` and `workstation check`
