@@ -7,6 +7,7 @@
 .pry_history
 .psql_history
 .node_repl_history
+.scala_history
 
 ## temporary
 # will eventually want this to be managed in this repo (probably?)
