@@ -5,3 +5,6 @@
 	path = .emacs.d
 	url = https://github.com/syl20bnr/spacemacs
 	ignore = dirty
+[submodule "apps/swagger-editor"]
+	path = apps/swagger-editor
+	url = https://github.com/swagger-api/swagger-editor.git
