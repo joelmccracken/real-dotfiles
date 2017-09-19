@@ -398,6 +398,7 @@ This is an attempt to fix the occasional term mode problem."
 
   (add-to-list 'exec-path "/usr/local/bin")
   (setq ensime-startup-notification nil)
+  (setq ensime-startup-snapshot-notification nil)
 
   ;; this bit of code is used to generate the list of all the variables to log
   ;; im just stcking it here so I dont need to re-figure it out
