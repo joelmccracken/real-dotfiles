@@ -49,12 +49,8 @@ def install
   puts "Installing..."
   Dir.chdir install_dir do
     Dir["*"].each do |file|
-      puts "installing #{file}"
-      if File.executable?(file)
-        spawn("./#{file}")
-      else
-        puts "Warning: #{file} not executable"
-      end
+      puts "executing install file #{file}"
+      run_script(file)
     end
   end
 end
@@ -67,6 +63,7 @@ def check
   puts "Checking..."
   Dir.chdir check_dir do
     Dir["*"].each do |file|
+      run_script(file)
     end
   end
 end
@@ -84,6 +81,8 @@ def run_script(file)
     process.wait
     if process.exit_code != 0
       puts "Warning: #{file} finished with exit code #{process.exit_code}".red
+    else
+      puts "#{file} OK"
     end
   else
     puts "Warning: #{file} not executable".red

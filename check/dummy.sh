@@ -1,1 +1,1 @@
-echo nothing to see here
+echo '(dummy script)'
