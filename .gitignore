@@ -147,3 +147,4 @@ project/
 secret
 .bintray/
 .docker/
+/.ghcjs/
