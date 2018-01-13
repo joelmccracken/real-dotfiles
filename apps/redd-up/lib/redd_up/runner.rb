@@ -12,7 +12,7 @@ module ReddUp
 
       case arguments.first
       when "check" then check(config)
-      else raise "Unknown option: #{arguments}"
+      else check(config)
       end
 
     end
