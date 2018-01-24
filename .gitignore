@@ -145,3 +145,5 @@ secrets
 api_cache/
 project/
 secret
+.bintray/
+.docker/
