@@ -89,6 +89,8 @@ case "$STATUS" in
     TIME_LEFT=$(timeLeft $WORK_TIME_IN_SECONDS)
     if (( "$TIME_LEFT" < 0 )); then
         breakMode
+    else
+        afplay -v '.5' /System/Library/Sounds/Tink.aiff &
     fi
     printTime "$TIME_LEFT" "red"
   ;;
