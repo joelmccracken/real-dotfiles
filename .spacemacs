@@ -3,9 +3,10 @@
 ;; It must be stored in your home directory.
 
 (add-to-list 'load-path
-             ;; for now, just contains a local versions of term.el
-             (expand-file-name "~/.emacs.d/private/")
-             )
+             (expand-file-name "~/.emacs.d/private/"))
+(add-to-list 'load-path
+             (expand-file-name "~/lib/emacs/"))
+
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -332,6 +333,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  (require 'vline)
+
+  (require 'col-highlight)
+
   (defun embiggen-steve ()
     (interactive)
     (set-face-attribute 'default nil :height 170))
@@ -582,7 +588,6 @@ This is an attempt to fix the occasional term mode problem."
 
 
   (clean-aindent-mode -1)
-
 
   )
 
