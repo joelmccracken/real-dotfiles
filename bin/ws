@@ -10,3 +10,7 @@ main = sh $ do
   liftIO $ print $ format fp file
   exitCode <- shell (format fp file) empty
   echo $ fromString $ "exit: " ++ show exitCode
+
+-- Local Variables: ***
+-- mode:haskell ***
+-- End: ***
