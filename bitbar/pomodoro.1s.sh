@@ -39,7 +39,7 @@ function breakMode {
 }
 
 function workMode {
-    changeStatus "1" "Work Mode" "Blow"
+    changeStatus "1" "Work (CLOSE DISTRACTIONS)" "Blow"
 }
 
 case "$1" in

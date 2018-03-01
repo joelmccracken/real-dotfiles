@@ -15,6 +15,7 @@ export GIT_EDITOR=$EDITOR
 
 alias lock=/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
 
+export PATH=/usr/local/opt/texinfo/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 # add emacs
 export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH
@@ -157,3 +158,5 @@ if [ -e "$rvm_script" ]; then
     source "$rvm_script";
 fi
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+export PATH="$HOME/.cargo/bin:$PATH"
