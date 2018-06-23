@@ -149,3 +149,8 @@ secret
 .docker/
 /.ghcjs/
 /.docker/
+.exercism.json
+.ispell_english
+.webdrivers
+.webtask
+.yarnrc

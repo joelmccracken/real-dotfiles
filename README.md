@@ -49,3 +49,10 @@ component in ~/bin/reddup runs haskell replacement-in-progress
 
 # planning
 setup/check scripts
+
+# TODO
+
+- do i want to keep having brew bundle ?
+-
+
+# fin
