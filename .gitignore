@@ -107,7 +107,8 @@ secrets
 .rnd
 .bash_sessions
 .dialyxir_core_*.plt
-
+.rncache
+# i think rncache is "react native" cache. seems to have tar.gz files of utils or somethin
 
 # os x stuff
 .CFUserTextEncoding
