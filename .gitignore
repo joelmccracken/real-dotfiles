@@ -157,4 +157,24 @@ secret
 .yarnrc
 
 # idk
+.nix-defexpr/
 .nix-defexpr/channels
+.dockercfg
+
+# rust -- seems like (currently) there aren't any settings in here I care to keep
+.rustup/
+.multirust
+
+
+# sc stuff
+.berkshelf/
+# probably can get rid of NVM. should rm it and figure out if anything results
+.nvm/
+env/
+# when working with RWG...
+go/
+showclix/
+
+# ignoring for now, since I don't have like an active "this version works" that I am using. each time I try it since that first time and
+# had a lot of success basically its been borked
+apps/remacs/
