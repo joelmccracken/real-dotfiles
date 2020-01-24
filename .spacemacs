@@ -37,8 +37,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     purescript
      lua
+     purescript
+     ansible
+     php
+     typescript
      nginx
      csv
      sql
@@ -79,7 +82,14 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(csharp-mode)
+   dotspacemacs-additional-packages '(
+                                      csharp-mode
+                                      (shen-elisp
+                                       :location (recipe :repo "deech/shen-elisp"
+                                                         :fetcher github
+                                                         :files ("shen*.el"))
+                                       :upgrade 't)
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -601,14 +611,14 @@ This is an attempt to fix the occasional term mode problem."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(magit-push-arguments (quote ("--set-upstream")))
+ '(magit-push-arguments '("--set-upstream"))
  '(package-selected-packages
    (quote
-    (psci purescript-mode psc-ide lua-mode ghub let-alist pos-tip org-category-capture dash-functional nginx-mode noflet ensime sbt-mode scala-mode csharp-mode winum flycheck-credo faceup pcre2el spinner log4e gntp json-snatcher json-reformat parent-mode haml-mode gitignore-mode fringe-helper git-gutter+ flx goto-chg diminish bind-key packed pythonic pkg-info epl package-build csv-mode sql-indent powerline org alert markdown-mode multiple-cursors hydra yasnippet git-gutter magit magit-popup iedit inf-ruby rust-mode highlight anzu smartparens bind-map evil undo-tree elixir-mode git-commit with-editor request helm helm-core popup haskell-mode company avy async projectile f js2-mode dash s yapfify uuidgen rake py-isort pug-mode osx-dictionary org-projectile org-download ob-elixir minitest livid-mode skewer-mode simple-httpd live-py-mode link-hint intero hlint-refactor hide-comnt helm-hoogle git-link flycheck-mix flycheck eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-ghci company-ghc column-enforce-mode cargo yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toml-mode toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters racket-mode racer quelpa pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode pbcopy paradox page-break-lines osx-trash orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode launchctl json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elm-mode elisp-slime-nav diff-hl define-word cython-mode coffee-mode cmm-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile anaconda-mode alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (ghub let-alist pos-tip org-category-capture dash-functional nginx-mode noflet ensime sbt-mode scala-mode csharp-mode winum flycheck-credo faceup pcre2el spinner log4e gntp json-snatcher json-reformat parent-mode haml-mode gitignore-mode fringe-helper git-gutter+ flx goto-chg diminish bind-key packed pythonic pkg-info epl package-build csv-mode sql-indent powerline org alert markdown-mode multiple-cursors hydra yasnippet git-gutter magit magit-popup iedit inf-ruby rust-mode highlight anzu smartparens bind-map evil undo-tree elixir-mode git-commit with-editor request helm helm-core popup haskell-mode company avy async projectile f js2-mode dash s yapfify uuidgen rake py-isort pug-mode osx-dictionary org-projectile org-download ob-elixir minitest livid-mode skewer-mode simple-httpd live-py-mode link-hint intero hlint-refactor hide-comnt helm-hoogle git-link flycheck-mix flycheck eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-ghci company-ghc column-enforce-mode cargo yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package toml-mode toc-org tern tagedit spacemacs-theme spaceline smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters racket-mode racer quelpa pyvenv pytest pyenv-mode py-yapf popwin pip-requirements persp-mode pbcopy paradox page-break-lines osx-trash orgit org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode launchctl json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ ghc gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elm-mode elisp-slime-nav diff-hl define-word cython-mode coffee-mode cmm-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-highlight-symbol auto-compile anaconda-mode alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(paradox-github-token t)
  '(safe-local-variable-values
-   (quote
-    ((ef/files "actions.org" "projects-maintenance.org" "projects.org" "upcoming.org" "waiting.org")
+   '((js-indent-level . 4)
+     (ef/files "actions.org" "projects-maintenance.org" "projects.org" "upcoming.org" "waiting.org")
      (elixir-enable-compilation-checking . t)
      (elixir-enable-compilation-checking)
      (encoding . utf-8)
@@ -618,8 +628,7 @@ This is an attempt to fix the occasional term mode problem."
                  (cons
                   (locate-dominating-file default-directory "ef.el")
                   load-path)))
-             (require
-              (quote ef))))
+             (require 'ef)))
      (ef/files "actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org")
      (ef/files quote
                ("actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org"))
@@ -627,9 +636,8 @@ This is an attempt to fix the occasional term mode problem."
            (load
             (expand-file-name "./ef.el")))
      (eval progn
-           (make-local-variable
-            (quote projectile-make-test-cmd))
-           (setq projectile-ruby-test-cmd "rake"))))))
+           (make-local-variable 'projectile-make-test-cmd)
+           (setq projectile-ruby-test-cmd "rake")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

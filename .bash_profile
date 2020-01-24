@@ -159,7 +159,5 @@ if [ -e "$rvm_script" ]; then
     source "$rvm_script";
 fi
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-export PATH="$HOME/.cargo/bin:$PATH"
+source ~/.bashrc
 export PATH="/usr/local/opt/node@8/bin:$PATH"
-if [ -e /Users/joel/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/joel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
