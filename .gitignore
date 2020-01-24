@@ -155,3 +155,6 @@ secret
 .webdrivers
 .webtask
 .yarnrc
+
+# idk
+.nix-defexpr/channels
