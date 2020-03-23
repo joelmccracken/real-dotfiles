@@ -108,6 +108,7 @@ function $i {
 
 
 
+
 do_command_done_alert() {
     osascript -e 'display dialog "Command Done!"'
 }
@@ -151,6 +152,10 @@ m_on_each() {
 
 find_test_files_matching() {
     find . -path './test/*_test.rb' "$@"
+}
+
+cdsc() {
+    cd ~/showclix/showclix/home/showclix;
 }
 
 rvm_script="$HOME/.rvm/scripts/rvm"
