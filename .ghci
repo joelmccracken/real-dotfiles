@@ -2,6 +2,6 @@
 
 -- Read GHCI commands from the file whose name is
 -- in the GHCIRC environment variable
-:def _load const(System.Environment.getEnvironment >>= maybe (return "") readFile . lookup "GHCIRC")
-:_load
-:undef _load
+-- :def _load const(System.Environment.getEnvironment >>= maybe (return "") readFile . lookup "GHCIRC")
+-- :_load
+-- :undef _load

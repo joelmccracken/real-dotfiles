@@ -105,10 +105,6 @@ function $i {
 #     pathmagic $i
 # done
 
-
-
-
-
 do_command_done_alert() {
     osascript -e 'display dialog "Command Done!"'
 }
@@ -140,6 +136,8 @@ bash_simple_prompt() {
     PS1=\$\  bash
 }
 
+alias stack-shell="stack exec --no-ghc-package-path bash"
+
 m_on_each() {
     while read file;
     do
@@ -163,6 +161,14 @@ rvm_script="$HOME/.rvm/scripts/rvm"
 if [ -e "$rvm_script" ]; then
     source "$rvm_script";
 fi
+
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 source ~/.bashrc
+
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+# silence os x catalina bash -> zsh warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Nix stuff
