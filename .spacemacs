@@ -6,6 +6,8 @@
              (expand-file-name "~/.emacs.d/private/"))
 (add-to-list 'load-path
              (expand-file-name "~/lib/emacs/"))
+(add-to-list 'load-path
+             (expand-file-name "~/lib/emacs/org-wiki/"))
 
 
 (defun dotspacemacs/layers ()
@@ -350,6 +352,15 @@ you should place your code here."
 
   (require 'col-highlight)
 
+  (require 'org-wiki)
+
+  (setq org-wiki-location-list
+        '(
+          "~/EF"    ;; First wiki (root directory) is the default.
+          ))
+
+  (setq org-wiki-location (car org-wiki-location-list))
+
   (defun embiggen-steve ()
     (interactive)
     (set-face-attribute 'default nil :height 170))
@@ -580,6 +591,9 @@ This is an attempt to fix the occasional term mode problem."
     (message "Debug output sent to *debug-term-log*")
     ))
 
+  (add-to-list 'prog-mode-hook 'linum-mode)
+  (add-to-list 'org-mode-hook 'auto-fill-mode)
+
   (define-key term-raw-map (kbd "s-d") 'jnm/debug-term-mode)
   (define-key term-mode-map (kbd "s-d") 'jnm/debug-term-mode)
 
@@ -618,7 +632,8 @@ This is an attempt to fix the occasional term mode problem."
  '(paradox-github-token t)
  '(safe-local-variable-values
    '((js-indent-level . 4)
-     (ef/files "actions.org" "projects-maintenance.org" "projects.org" "upcoming.org" "waiting.org")
+     (haskell-process-use-ghci . t)
+     (haskell-indent-spaces . 4)
      (elixir-enable-compilation-checking . t)
      (elixir-enable-compilation-checking)
      (encoding . utf-8)
@@ -630,8 +645,6 @@ This is an attempt to fix the occasional term mode problem."
                   load-path)))
              (require 'ef)))
      (ef/files "actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org")
-     (ef/files quote
-               ("actions.org" "maintenance.org" "projects.org" "upcoming.org" "waiting.org"))
      (eval progn
            (load
             (expand-file-name "./ef.el")))

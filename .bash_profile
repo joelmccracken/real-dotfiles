@@ -17,6 +17,7 @@ alias lock=/System/Library/Frameworks/ScreenSaver.framework/Versions/Current/Res
 
 export PATH=/usr/local/opt/texinfo/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.emacs.d/bin:$PATH
 # add emacs
 export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH
 # add emacsclient, etc
@@ -44,7 +45,13 @@ git-on-branch () {
 
 shopt -s extglob
 
-ssh-add `ls ~/secrets | grep id_rsa | grep -v .pub` > /dev/null 2>&1
+
+# instead of this, use the ssh key config
+# {
+#     cd ~/secrets;
+#     ssh-add `ls | grep id_rsa | grep -v .pub` > /dev/null 2>&1;
+#     cd - > /dev/null 2>&1
+# }
 
 function aalias {
     mkdir -p ~/.bash_it/custom/
@@ -172,3 +179,5 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Nix stuff
+NIX_IGNORE_SYMLINK_STORE=1
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

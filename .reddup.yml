@@ -2,8 +2,6 @@ locations:
   - type: git
     location: ~/EF
   - type: git
-    location: ~/Reference
-  - type: git
     location: ~/Projects/*
   - type: inbox
     location: ~/Desktop
