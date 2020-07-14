@@ -1,14 +1,5 @@
 export PATH="/usr/local/bin:$PATH"
 
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
-
-# Lock and Load a custom theme file
-export BASH_IT_THEME="bobby"
-
-# Load Bash It
-source $BASH_IT/bash_it.sh
-
 
 export EDITOR=emacsclient
 export GIT_EDITOR=$EDITOR
@@ -169,14 +160,7 @@ if [ -e "$rvm_script" ]; then
     source "$rvm_script";
 fi
 
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-source ~/.bashrc
-
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 
-# silence os x catalina bash -> zsh warning
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-# Nix stuff
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
