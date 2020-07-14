@@ -179,5 +179,4 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Nix stuff
-NIX_IGNORE_SYMLINK_STORE=1
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
