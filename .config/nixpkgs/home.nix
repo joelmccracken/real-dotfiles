@@ -14,10 +14,11 @@
     extraPackages = epkgs: [
       epkgs.nix-mode
       epkgs.magit
+      epkgs.vterm
     ];
   };
   
-  home.packages = [  ];
+  home.packages = [ pkgs.cmake pkgs.libtool pkgs.ripgrep pkgs.fd pkgs.fontconfig pkgs.coreutils pkgs.ghcid ];
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
