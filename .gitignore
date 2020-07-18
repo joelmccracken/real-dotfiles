@@ -195,3 +195,8 @@ sesco/
 .config/inkscape/
 .config/stripe/
 .rush/
+
+
+# links to where the installed nix files are, but dont need
+# to revision them
+.nix-profile
