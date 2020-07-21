@@ -183,6 +183,8 @@ Justinmind/
 lib/emacs/org-wiki/
 .zsh_history
 sesco/
+
+
 .kube/
 .ngrok2/
 sesco/
@@ -202,3 +204,6 @@ sesco/
 .nix-profile
 
 .emacs.d
+
+.aws/
+.emacs.d/
