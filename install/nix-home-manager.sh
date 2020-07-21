@@ -4,6 +4,7 @@
 setupNix () {
   # https://nixos.org/nix/manual/#sect-macos-installation 
   sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+  . $HOME/.nix-profile/etc/profile.d/nix.sh
 }
 
 setupHomeManager () {
